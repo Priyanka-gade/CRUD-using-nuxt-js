@@ -13,7 +13,7 @@
                 <br />
                 <div>
                     <label>Password :</label>&nbsp;
-                    <input type="text" class="border border-solid border-slate-500 " />
+                    <input type="password" class="border border-solid border-slate-500 " />
                 </div>
                 <br />
                 <div>

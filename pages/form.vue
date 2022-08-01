@@ -1,9 +1,9 @@
 <template>
-       <BucketList></BucketList>
-       <Todos v-bind:dataarray="dataarray"></Todos>
+       <BucketList v-on:add-todo="addTododata"></BucketList>
+       <Todos v-bind:dataarray="dataarray" v-on:delete-todo="deletetododata"></Todos>
 </template>
 <script>
-import { BucketList } from '/components/BucketList.vue'
+import  BucketList  from '/components/BucketList.vue'
 import Todos from '/components/Todos.vue'
     export default{
         name:'list page',
@@ -22,7 +22,16 @@ import Todos from '/components/Todos.vue'
                     completed:false
                 }
             ]
-        }
+        }  
+    },
+    methods:{
+        addTododata(newTodo){
+            this.dataarray = [...this.dataarray, newTodo]
+        },
+        deletetododata(id) {
+      this.dataarray = this.dataarray.filter((items) => items.id !== id)
     }
+    }
+    
     }
 </script>
